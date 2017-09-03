@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Data Visulaization</title>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="libraries/jquery.min.js"></script>
+  <script src="libraries/angular.min.js"></script>
+  <script src="libraries/d3.v3.min.js"></script>
+
+
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" onmousemove="hideInfo()">
+<header></header>
+
+
+<div class="sidenav">
+    
+    <div class = "home" onmousemove="hideInfo()"> <a href="">Home</a> </div>
+    <div style="background-color: #fcfcfc; height:3px; width: 100%" onmousemove="hideInfo()"> </div>
+    
+    <div class = "Teams" onmousemove="hideInfo()">
+    <div class="pickTeam"><a href = "" tabindex="1">Teams List</a></div>
+    <div style="background-color: #fcfcfc; height:3px; width: 100%"> </div>
+    <div class = "teamCols">
+      <div class="playerCol">
+
+            <div>
+              <input id="box1" type="checkbox" ng-model="check1" ng-click="filtering('Manchester Utd', check1);"/>
+              <label for="box1">Manchester Utd</label>
+            </div>
+
+            <div>
+              <input id="box2" type="checkbox" ng-model="check2" ng-click="filtering('Manchester City', check2);"/>
+              <label for="box2">Manchester City</label>
+            </div>
+
+            <div>
+              <input id="box3" type="checkbox" ng-model="check3" ng-click="filtering('Chelsea', check3);"/>
+              <label for="box3">Chelsea</label>
+            </div>
+
+            <div>
+              <input id="box4" type="checkbox" ng-model="check4" ng-click="filtering('Liverpool', check4);"/>
+              <label for="box4">Liverpool</label>
+            </div>
+
+            <div>
+              <input id="box5" type="checkbox" ng-model="check5" ng-click="filtering('Spurs', check5);"/>
+              <label for="box5">Spurs</label>
+            </div>
+
+            <div>
+              <input id="box6" type="checkbox" ng-model="check6" ng-click="filtering('Arsenal', check6);"/>
+              <label for="box6">Arsenal</label>
+            </div>
+
+            <div>
+              <input id="box7" type="checkbox" ng-model="check7" ng-click="filtering('FC Barcelona', check7);"/>
+              <label for="box7">FC Barcelona</label>
+            </div>
+
+            <div>
+              <input id="box8" type="checkbox" ng-model="check8" ng-click="filtering('Real Madrid', check8);"/>
+              <label for="box8">Real Madrid</label>
+            </div>
+
+            <div>
+              <input id="box9" type="checkbox" ng-model="check9" ng-click="filtering('Atletico Madrid', check9);"/>
+              <label for="box9">Atletico Madrid</label>
+            </div>
+
+            <div>
+              <input id="box10" type="checkbox" ng-model="check10" ng-click="filtering('Sevilla FC', check10);"/>
+              <label for="box10">Sevilla FC</label>
+            </div>
+
+            
+            <div>
+              <input id="box11" type="checkbox" ng-model="check11" ng-click="filtering('Celta Vigo', check11);"/>
+              <label for="box11">Celta Vigo</label>
+            </div>
+
+            <div>
+              <input id="box12" type="checkbox" ng-model="check12" ng-click="filtering('Malaga CF', check12);"/>
+              <label for="box12">Malaga CF</label>
+            </div>
+
+            <div>
+              <input id="box13" type="checkbox" ng-model="check13" ng-click="filtering('FC Bayern', check13);"/>
+              <label for="box13">FC Bayern</label>
+            </div>
+
+            <div>
+              <input id="box14" type="checkbox" ng-model="check14" ng-click="filtering('Bor. Dortmund', check14);"/>
+              <label for="box14">Bor. Dortmund</label>
+            </div>
+
+            <div>
+              <input id="box15" type="checkbox" ng-model="check15" ng-click="filtering('Bayer 04', check15);"/>
+              <label for="box15">Bayer 04</label>
+            </div>
+      </div>
+
+
+      <div class="playerCol">
+            
+
+            <div>
+              <input id="box16" type="checkbox" ng-model="check16" ng-click="filtering('FC Schalke 04', check16);"/>
+              <label for="box16">FC Schalke 04</label>
+            </div>
+
+            <div>
+              <input id="box17" type="checkbox" ng-model="check17" ng-click="filtering('RB Leipzig', check17);"/>
+              <label for="box17">RB Leipzig</label>
+            </div>
+
+            <div>
+              <input id="box18" type="checkbox" ng-model="check18" ng-click="filtering('PSG', check18);"/>
+              <label for="box18">PSG</label>
+            </div>
+
+            <div>
+              <input id="box19" type="checkbox" ng-model="check19" ng-click="filtering('AS Monaco', check19);"/>
+              <label for="box19">AS Monaco</label>
+            </div>
+
+            <div>
+              <input id="box20" type="checkbox" ng-model="check20" ng-click="filtering('Olym. Lyonnais', check20);"/>
+              <label for="box20">Olym. Lyonnais</label>
+            </div>
+
+
+        
+            <div>
+              <input id="box21" type="checkbox" ng-model="check21" ng-click="filtering('OGC Nice', check21);"/>
+              <label for="box21">OGC Nice</label>
+            </div>
+
+            <div>
+              <input id="box22" type="checkbox" ng-model="check22" ng-click="filtering('Juventus', check22);"/>
+              <label for="box22">Juventus</label>
+            </div>
+
+            <div>
+              <input id="box23" type="checkbox" ng-model="check23" ng-click="filtering('Milan', check23);"/>
+              <label for="box23">Milan</label>
+            </div>
+
+            <div>
+              <input id="box24" type="checkbox" ng-model="check24" ng-click="filtering('Inter', check24);"/>
+              <label for="box24">Inter</label>
+            </div>
+
+            <div>
+              <input id="box25" type="checkbox" ng-model="check25" ng-click="filtering('Napoli', check25);"/>
+              <label for="box25">Napoli</label>
+            </div>
+
+            <div>
+              <input id="box26" type="checkbox" ng-model="check26" ng-click="filtering('Roma', check26);"/>
+              <label for="box26">Roma</label>
+            </div>
+
+            <div>
+              <input id="box27" type="checkbox" ng-model="check27" ng-click="filtering('Ajax', check27);"/>
+              <label for="box27">Ajax</label>
+            </div>
+
+            <div>
+              <input id="box28" type="checkbox" ng-model="check28" ng-click="filtering('Feyenoord', check28);"/>
+              <label for="box28">Feyenoord</label>
+            </div>
+
+            <div>
+              <input id="box29" type="checkbox" ng-model="check29" ng-click="filtering('FC Porto', check29);"/>
+              <label for="box29">FC Porto</label>
+            </div>
+
+            <div>
+              <input id="box30" type="checkbox" ng-model="check30" ng-click="filtering('SL Benfica', check30);"/>
+              <label for="box30">SL Benfica</label>
+            </div>
+
+           </div>
+    </div>
+  </div>
+
+    <div class = "shownPlayers">
+      <div class="shownPlayersHeader"><strong>Players List</strong></div>
+        <div class = "playeList">
+           <div ng-repeat="one in shownPlayers track by $index">
+            <a href="#">
+             <input id="PPP{{$index}}" type="checkbox" ng-model="player" ng-click="ChoosePlayer(one, player);"/>
+             <label id = "thenameoftheplayer" for="PPP{{$index}}" ng-mouseover="getInformation(one);"
+             onmousemove="getInformation2(event)" onmouseout="hideInfo()"> {{one}}  </label>    
+             </a> 
+          </div>
+        </div>
+        <span id="tooltip-span">
+          <div id = "playerInformation"> </div> 
+        </span>
+    </div>
+    
+    <div onmousemove="hideInfo()" style="background-color: #fcfcfc; height:10px; width: 100%"> </div>
+    <div onmousemove="hideInfo()" class = "highlyRated" > <a href="" tabindex="2">Highly Rated Players</a> </div>
+       <div style="background-color: #fcfcfc; height:3px; width: 100%"> </div>
+    <div onmousemove="hideInfo()" class = "Correlation" > <a id ="DKKK" href="">Correlations</a> </div>
+      
+</div>
+
+<div class = "rightSide4">
+  <div class = "rightSide4Header"> Welcome to Fifa 17 Visulaization Site </div>
+  <div class = "rightSide4Content"> <span style="color:#7b8e7b; font-weight: bold;">Do </span> you want to build an awesome team in fifa 17?<br/>
+    <span style="color:#7b8e7b; font-weight: bold;">Do </span> you always wondered what are the differences between two players skills? </br> 
+    <span style="color:#7b8e7b; font-weight: bold;">Do </span> you always wondered which player is best for a specific position? <br/>
+    <span style="color:#7b8e7b; font-weight: bold;">Are </span> you interested in statistics that help you decide what qualities should your players have? </br>
+    <span style="color:#7b8e7b; font-weight: bold;">Let </span> our website help you answer all of these questions <br/>
+    <span style="color:#7b8e7b; font-weight: bold;">Explore </span> our awesome three features
+  </div>
+  <div class= "rightSide4Hr"></div>
+  <div class= "rightSide4Footer"> Ayman Faour - ayman.f.1993@gmail.com <br/><br/>
+  Husam Khater - husam.kh123@gmail.com<br/> <span style="color:#fefefe"> </span> </div>
+  <div class = "rightSide4"></div>
+</div>
+
+<div class= "rightSide3">
+<div class= "rightSide3Header">
+  Correlation
+</div>
+<div> 
+  <select>
+    <option value="hide">-- Select --</option>
+    <option value="Age" rel="icon-temperature">Age</option>
+    <option value="Weight">Weight</option>
+    <option value="Height">Height</option>
+</select> 
+
+<select>
+    <option value="hide">-- Select --</option>
+    <option value="Speed">Speed</option>
+    <option value="Acceleration">Acceleration</option>
+    <option value="Stamina">Stamina</option>
+    <option value="Jumping">Jumping</option>
+    <option value="Heading">Heading</option>
+    <option value="Strength">Strength</option>
+</select>
+  <div class="corLegend">
+    <div class ="corLegendIn" id = "legendCircle2"> </div>
+    <div class ="corLegendIn"> </div>
+    <div style="float:right"><img src = "gradient.jpg"> &nbsp </div>
+    <div class ="corLegendIn"> 1 player &nbsp </div>
+  </div>
+</div>
+<div class = "corYAxis"> </div>
+<div class = "corDraw">  
+</div>
+<div class = "corXAxis"> </div>
+</div>
+
+
+<div class="rightSide2">
+<div class = "rightSide2Header"> Highly Rated Players </div>
+<div class = "rightSide2Header2"> Choose a Position </div>
+<div class = "rightSide2ChoosePosition">
+<div class = "postionGK"> 
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('GK');" > GK </a> </div>
+</div>
+<div class = "postionDef"> 
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('CB');"> CB </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('LB');"> LB </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('RB');"> RB </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('LWB');"> LWB </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('RWB');"> RWB </a> </div>
+</div>
+<div class = "positionCenter">
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('CDM');"> CDM </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('CM');"> CM </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('CAM');"> CAM </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('LM');"> LM </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('RM');"> RM </a> </div>
+</div>
+<div class = "positionattack">
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('RW');"> RW </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('LW');"> LW </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('ST');"> ST </a> </div>
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('CF');"> CF </a> </div>
+</div>
+<div class = "positionany">
+  <div class="positionName"> <a href ="" ng-click="getHighlyByPosition('');"> ANY </a> </div>
+</div>
+ </div>
+
+<div class = "rightSide2ChooseAttr">
+<div class = "chooseOrderAttr"> Choose the Order Attribute </div>
+<div class = "attrSixNames"> 
+  <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Physical');"> Physical </a> </div>
+  <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Shooting');"> Shooting </a> </div>
+  <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Dribbling');"> Dribbling </a> </div>
+  <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Passing');"> Passing </a> </div>
+  <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Pace');"> Pace </a> </div>
+  <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Defense');"> Defense </a> </div>
+  <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Rating');"> Rating </a> </div>
+</div>
+
+ </div>
+
+ <div class = "rightSide2ChoosePhysicalSkills">
+  <div class = "chooseOrderAttr"> Choose Physical Skill </div>
+  <div class = "attrSixNames"> 
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Stamina');"> Stamina </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Strength');"> Strength </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Jumping');"> Jumping </a> </div>
+
+  </div>
+  
+</div>
+
+
+<div class = "rightSide2ChooseShootingSkills">
+  <div class = "chooseOrderAttr"> Choose Shooting Skill </div>
+  <div class = "attrSixNames"> 
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Volleys');"> Volleys </a> </div>
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Penalties');"> Penalties </a> </div>
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Freekick Accuracy');"> Freekick Accuracy </a> </div>
+    
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Curve');"> Curve </a> </div>
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Long Shot');"> Long Shot </a> </div>
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Finishing');"> Finishing </a> </div>
+
+    
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Shot Power');"> Shot Power </a> </div>
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Heading');"> Heading </a> </div>
+    <div class="attrName" style="width: 15%;"> <a href ="" ng-click="getHighlyByAttr('Attacking Position');"> Attacking Position </a> </div>
+
+  </div>
+  
+</div>
+
+
+
+<div class = "rightSide2ChooseDribblingSkills">
+  <div class = "chooseOrderAttr"> Choose Dribbling Skill </div>
+  <div class = "attrSixNames"> 
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Ball Control');"> Ball Control </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Dribblingz');"> Dribbling </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Reaction');"> Reaction </a> </div>
+
+  </div>
+  
+</div>
+
+
+<div class = "rightSide2ChoosePassingSkills">
+  <div class = "chooseOrderAttr"> Choose Passing Skill </div>
+  <div class = "attrSixNames"> 
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Vision');"> Vision </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Crossing');"> Crossing </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Short Pass');"> Short Pass </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Long Pass');"> Long Pass </a> </div>
+  </div>
+  
+</div>
+
+<div class = "rightSide2ChoosePaceSkills">
+  <div class = "chooseOrderAttr"> Choose Pace Skill </div>
+  <div class = "attrSixNames"> 
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Acceleration');"> Acceleration </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Speed');"> Speed </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Agility');"> Agility </a> </div>
+  </div>
+  
+</div>
+
+<div class = "rightSide2ChooseDefenseSkills">
+  <div class = "chooseOrderAttr"> Choose Defense Skill </div>
+  <div class = "attrSixNames"> 
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Marking');"> Marking </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Sliding Tackle');"> Sliding Tackle </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Standing Tackle');"> Standing Tackle </a> </div>
+    <div class="attrName"> <a href ="" ng-click="getHighlyByAttr('Interceptions');"> Interceptions </a> </div>
+  </div>
+  
+</div>
+
+<div class = "drawingTheChartRightSide2"> </div>
+<div style ="width:100%;">
+<div style = "float:left; margin-left:100px;" class = "LoadClick"> <a href = "" onclick="changeLoadMore(1)" > Load More </a> </div>
+<div style = "float:right; margin-right:100px;"class = "LoadClick"> <a href = "" onclick="changeLoadMore(2)" > Load Less </a> </div>
+</div>
+
+<br/>
+<div style="width:100%; float:left; height:30px"> </div>
+</div>
+
+
+<div id = "emptyTempDiv"> </div>
+
+<div class="rightSide" onmousemove="hideInfo()">
+    <!-- <div id="chart"></div>
+    <div id=paraChart> </div> -->
+    
+    <div class = "firstVis">
+      
+      <div id="chart"></div>
+      <div id=paraChart> </div>
+    </div>
+    <div class = "secondVis">
+      <div class = "attrCol"><a href="" ng-click="DrawAttr(1);">Physical</a></div>
+      <div class = "attrCol"><a href="" ng-click="DrawAttr(2);">Shooting</a></div>
+      <div class = "attrCol"><a href="" ng-click="DrawAttr(3);">Dribbling</a></div>
+      <div class = "attrCol"><a href="" ng-click="DrawAttr(4);">Passing</a></div>
+      <div class = "attrCol"><a href="" ng-click="DrawAttr(5);">Pace</a></div>
+      <div class = "attrCol"><a href="" ng-click="DrawAttr(6);">Defense</a></div>
+
+      <div id = "PhyChart">  </div>
+      <div id = "ShoChart">  </div>
+      <div id = "DriChart">  </div>
+      <div id = "PasChart">  </div>
+      <div id = "PacChart">  </div>
+      <div id = "DefChart">  </div>
+
+    </div>
+
+    <div class = "thirdVis">
+      <div class = "thirdVisHeader">  Top 10 Players </div>
+
+      <div id="firstRatedGroup">
+      
+      <div id = "firstRatedPlayer">  
+      <div class = "topTenPlayerName">  </div>
+      </div>
+      <div id = "secondRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+      
+      <div id = "thirdRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+      
+      </div>
+
+      <div id="secondRatedGroup">
+
+      <div id = "fourthRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+      <div id = "fifthRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+      <div id = "sixthRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+        
+      </div>
+
+      <div id="thirdRatedGroup">
+
+      <div id = "seventhRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+      <div id = "eighthRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+      <div id = "ninthRatedPlayer">
+      <div class = "topTenPlayerName">  </div>  
+      </div>
+        
+      </div>
+
+      <div id="fourthRatedGroup">
+        
+      <div id = "tenthRatedPlayer">
+      <div class = "topTenPlayerName"> </div>  
+      </div>
+      
+      </div>
+      
+    </div>
+</div>
+
+
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="RadarChart.js"></script>
+<script type="text/javascript" src="RadarChartLegend.js"></script>
+<script type="text/javascript" src="ParallelChart.js"></script>
+<script type="text/javascript" src="BarChart.js"></script>
+<script type="text/javascript" src="ScatPlotChart.js"></script>
+</body>
+</html>

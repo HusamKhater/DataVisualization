@@ -1,0 +1,1035 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+
+* {
+    box-sizing: border-box;
+}  
+
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+
+header {
+    height: 152px;
+    background-image: url("header4.jpg");
+    width: 100%;
+    background-repeat: no-repeat;
+}
+    .sidenav {
+      background-color: #fcfcfc;
+      width: 15%;
+      float: left;
+    }
+
+    .Teams{
+      height:auto;
+      float:left;
+      width:100%;
+      margin-top: 0px;
+    }
+
+    .teamCols{
+      padding: 5px;
+      display: none;
+    }
+
+    .rightSide{
+      width:85%;
+      height: 808px;
+      float: left;
+      display: none;
+    }
+
+
+    .firstVis{
+      height: 550px;
+      width:100%;
+    }
+
+    .secondVis{
+      height: 550px;
+      /* background-color: #fff8e1; */
+      background-color:#e6ede6;
+    }
+
+    
+
+    .thirdVisHeader{
+      width: 100%;
+      float: left;
+      text-align: center;
+      color: black;
+      padding-top: 5px;
+      font-size: 25px;
+    }
+
+
+    .topTenPlayerName{
+      color: #a7bea7;
+      top: 0px;
+      width: 100%;
+      float: left;
+    }
+
+    #firstRatedGroup{
+      height: 260px;
+      padding-top: 3px;
+      padding-left: 3px;
+    }
+
+
+    #firstRatedPlayer{
+      width: 33%;
+      float:left;
+    }
+
+    #secondRatedPlayer{
+      width: 33%;
+      float:left;
+    }
+
+    #thirdRatedPlayer{
+      width: 34%;
+      float:left;
+    }
+
+    #secondRatedGroup{
+      height: 253px;
+      padding-top: 3px;
+      padding-left: 3px;
+    }
+
+    #fourthRatedPlayer{
+      width: 33%;
+      float:left;
+    }
+
+    #fifthRatedPlayer{
+      width: 33%;
+      float:left;
+    }
+
+
+    #sixthRatedPlayer{
+      width: 34%;
+      float:left;
+    }
+
+    #thirdRatedGroup{
+      height: 253px;
+      padding-top: 3px;
+      padding-left: 3px;
+    }
+
+    #seventhRatedPlayer{
+      width: 33%;
+      float:left;
+    }
+
+    #eighthRatedPlayer{
+      width:33%; 
+      float:left;     
+    }
+
+    #ninthRatedPlayer{
+      width: 34%;
+      float:left;
+    }
+
+    #fourthRatedGroup{
+      height: 253px;
+      padding-top: 3px;
+      padding-left: 3px;
+    }
+
+    #tenthRatedPlayer{
+      width: 33%;
+      float:left;
+    }
+
+    .attrCol{
+      width: 16.666666666666%;
+      float: left;
+      text-align: center;
+    }
+
+
+    .attrCol a {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .attrCol a:hover {
+        color: gray;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .attrCol a:active {
+        color: gray;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .attrCol a[tabindex]:focus {
+    color: gray;
+    outline: none;
+    }
+
+    .phyAttr a{
+      margin-top: 5px;
+      width: 16.666666666666%;
+      float: left;
+      text-align: center;
+      color: grey;
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+
+    #chart {
+      float: left;
+      padding-top: 10px;
+      padding-left: 2px;
+      width:55%;
+    }	
+
+    #paraChart{
+      width:40%;
+      float: left;
+      padding-top: 5px;
+    }
+
+    .pickTeam {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      font-size: 18px;
+      /* color: #e6e6e6; */
+      color: #fcfcfc;
+      text-align: center;
+      background-color: #6586A7;
+      
+    }
+
+    .shownPlayers{
+      width: 100%;
+      padding-top: 3px;
+      overflow: auto;
+      display: none;
+    }
+
+    .shownPlayersHeader{
+      padding-top: 3px;
+      padding-bottom: 3px;
+      font-size: 20px;
+      color: #fcfcfc;
+      text-align: center;
+      background-color: #6586A7;
+    }
+
+
+    .highlyRated{
+      padding-top: 3px;
+      padding-bottom: 3px;
+      font-size: 20px;
+      color: #fcfcfc;
+      text-align: center;
+      background-color: #6586A7;
+    }
+
+
+
+
+
+    .highlyRated a:link {
+    color: #fcfcfc; 
+    background-color: transparent; 
+    text-decoration: none;
+    }
+
+    .highlyRated a:visited {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .highlyRated a:hover {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .highlyRated a:active {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+
+    .pickTeam a:link {
+    color: #fcfcfc; 
+    background-color: transparent; 
+    text-decoration: none;
+    }
+
+    .pickTeam a:visited {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .pickTeam a:hover {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .pickTeam a:active {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+
+
+
+    .shownPlayers a:link {
+    color: black; 
+    background-color: transparent; 
+    text-decoration: none;
+    }
+
+    .shownPlayers a:visited {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .shownPlayers a:hover {
+        color: gray;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .shownPlayers a:active {
+        color: gray;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .playeList{
+      padding: 5px;
+      height: auto;
+      max-height: 590px;
+      overflow-y: auto;
+    }
+    
+
+    .playerCol{
+      width:50%;
+      float:left;
+      font-size: 13px;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #129837;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+
+
+
+.radio {
+  margin: 0.1rem;
+}
+.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+.radio input[type="radio"] + .radio-label:before {
+  content: '';
+  background: #f4f4f4;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  position: relative;
+  top: 0em;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+.radio input[type="radio"]:checked + .radio-label:before {
+  background-color: #3197EE;
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+.radio input[type="radio"]:focus + .radio-label:before {
+  outline: none;
+  border-color: #3197EE;
+}
+.radio input[type="radio"]:disabled + .radio-label:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+.radio input[type="radio"] + .radio-label:empty:before {
+  margin-right: 0;
+}
+
+.theRightSide{
+  background-color: black;
+  float: right;
+  position: fixed;
+  height: 500px;
+  left: 500px;
+}
+
+
+
+/*** basic styles ***/
+
+/*** custom checkboxes ***/
+
+input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+}
+
+input[type=checkbox] + label:before { content: "\f096"; } /* unchecked icon */
+input[type=checkbox] + label:before { letter-spacing: 10px; } /* space between checkbox and label */
+
+input[type=checkbox]:checked + label:before { content: "\f046"; } /* checked icon */
+input[type=checkbox]:checked + label:before { letter-spacing: 5px; } /* allow space for check mark */
+
+
+
+.background path {
+  fill: none;
+  stroke: #ddd;
+}
+
+.foreground path {
+  fill: none;
+  stroke: steelblue;
+}
+
+.brush .extent {
+  fill-opacity: .3;
+  stroke: #fff;
+}
+
+.axis line,
+.axis path {
+  fill: none;
+  stroke: #000;
+}
+
+.axis text {
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+}
+
+
+/******************* rightSide 2 *******************/
+
+.rightSide2{
+  width:85%;
+  height: auto;
+  float: left;
+  display: none;
+}
+
+.rightSide2Header{
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: #7b8e7b;
+  padding-top: 5px;
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+.rightSide2Header2{
+  width: 100%;
+  float: left;
+  color: #84a484;
+  padding-top: 5px;
+  font-size: 25px;
+  padding-bottom: 10px;
+  padding-left: 35px;
+}
+
+.chooseOrderAttr{
+  width: 100%;
+  float: left;
+  color: #84a484;
+  padding-top: 5px;
+  font-size: 25px;
+}
+
+.rightSide2ChoosePosition{
+  width: 100%;
+  color: #7b8e7b;
+  padding-top: 5px;
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+.rightSide2ChooseAttr{
+  width: 100%;
+  color: #7b8e7b;
+  padding-left: 40px;
+}
+
+
+.rightSide2ChoosePhysicalSkills, .rightSide2ChooseShootingSkills, .rightSide2ChooseDribblingSkills, .rightSide2ChoosePassingSkills
+,.rightSide2ChoosePaceSkills ,.rightSide2ChooseDefenseSkills {
+  display:none;
+  width: 100%;
+  color: #7b8e7b;
+  padding-left: 40px;
+}
+
+
+.LoadClick a:link {
+  color: #84a484; 
+  background-color: transparent; 
+  text-decoration: none;
+  }
+
+  .LoadClick a:visited {
+      color: #84a484;
+      background-color: transparent;
+      text-decoration: none;
+  }
+
+  .LoadClick a:hover {
+      color: #96b7a2;
+      background-color: transparent;
+      text-decoration: none;
+  }
+
+  .LoadClick a:active {
+      color: #84a484;
+      background-color: transparent;
+      text-decoration: none;
+  }
+
+
+.attrSixNames{
+  width: 100%;
+  float: left;
+}
+
+.postionGK{
+  width: 100%;
+  float: left;
+  margin-bottom: 5px;
+}
+
+.positionDef{
+  width: 100%;
+  float:left;
+  margin-top: 5px;
+}
+
+
+.positionCenter{
+  width: 100%;
+  float:left;
+  margin-top: 5px;
+}
+
+.positionattack{
+  width: 100%;
+  float:left;
+  margin-top: 5px;
+}
+
+.positionany{
+  width: 100%;
+  float:left;
+  margin-top: 5px;
+}
+
+.positionName{
+  width: 10%;
+  float: left;
+  background-color: #9e2a3b; /* ef1722 */
+  margin-right: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+
+
+    .positionName a:link {
+    color: #d9ede0; 
+    background-color: transparent; 
+    text-decoration: none;
+    }
+
+    .positionName a:visited {
+        color: #d9ede0;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .positionName a:hover {
+        color: #d9ede0;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .positionName a:active {
+        color: #d9ede0;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+
+    .attrName{
+      width: 12%;
+      float: left;
+      background-color: #9e2a3b; /* ef1722 */
+      margin-right: 5px;
+      text-align: center;
+      font-size: 18px;
+      margin-top: 5px;
+      }
+
+
+    .attrName a:link {
+    color: #d9ede0; 
+    background-color: transparent; 
+    text-decoration: none;
+    }
+
+    .attrName a:visited {
+        color: #d9ede0;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .attrName a:hover {
+        color: #d9ede0;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .attrName a:active {
+        color: #d9ede0;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+
+.bar rect {
+  fill: #87af87;
+}
+
+.bar text.value {
+  fill: white;
+}
+
+
+
+ .axis path {
+  fill: none;
+}
+
+ .x.axis line {
+  stroke: #fff;
+  stroke-opacity: .4;
+}
+
+ .y.axis path {
+  stroke: black;
+}
+
+/******************* rightSide3 ***********************/
+
+.rightSide3{
+  width:85%;
+  height: auto;
+  float: left;
+  display: none;
+}
+
+.rightSide3Header{
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: #7b8e7b;
+  padding-top: 5px;
+  font-size: 35px;
+  padding-bottom: 10px;
+}
+
+
+    .Correlation{
+      padding-top: 3px;
+      padding-bottom: 3px;
+      font-size: 20px;
+      text-align: center;
+      background-color: #6586A7;
+    }
+
+    .Correlation a:focus {
+    outline: none;
+    }
+
+    
+    .highlyRated a:focus {
+    outline: none;
+    }
+
+    
+    .pickTeam a:focus {
+    outline: none;
+    }
+    /*9fbba9*/
+    .Correlation a:link {
+    color: #fcfcfc; 
+    background-color: transparent; 
+    text-decoration: none;
+    }
+
+    .Correlation a:visited {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .Correlation a:hover {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .Correlation a:active {
+        color: #fcfcfc;
+        background-color: transparent;
+        text-decoration: none;
+    }
+      
+    .corLegend{
+      color: #7b8e7b;
+      display: none;
+      float:right;
+      padding-right: 100px;
+    }
+
+    .corLegendIn{
+      float:right;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    #legendCircle{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 0.5px black solid;
+      background-color: #FFF1F1;
+      margin-right: 10px;
+      margin-top: 15px;
+    }
+
+    #legendCircle2{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 0.5px white;
+      background-color: white;
+      margin-right: 3px;
+      margin-top: 15px;
+    }
+
+
+.line2 {
+    stroke: #E4002B;
+    fill: none;
+    stroke-width: 3;
+}
+
+ .axis path,
+ .axis line {
+    fill: none;
+    stroke: black;
+}
+
+.axis text {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.text-label {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+.dot {
+    stroke: #293b47;
+    
+}
+
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  margin-left: 20px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  width: 170px;
+  height: 40px;
+}
+
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #a43939/*a64c4c*/;
+  padding: 10px 12px;
+}
+.select-styled:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-color: #fff transparent transparent transparent;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+.select-styled:hover {
+  background-color: #a64c4c;
+}
+.select-styled:active, .select-styled.active {
+  background-color: #a33434;
+}
+.select-styled:active:after, .select-styled.active:after {
+  top: 9px;
+  border-color: transparent transparent #fff transparent;
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #a33030;
+}
+.select-options li {
+  margin: 0;
+  padding: 12px 0;
+  text-indent: 15px;
+  border-top: 1px solid #932b2b;
+  -moz-transition: all 0.15s ease-in;
+  -o-transition: all 0.15s ease-in;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+.select-options li:hover {
+  color: #a43939;
+  background: #fff;
+}
+.select-options li[rel="hide"] {
+  display: none;
+}
+
+.corYAxis{
+  margin: 10px 30px;
+  color: #7b8e7b;
+}
+
+.corXAxis{
+  margin: 0px 500px;
+  color: #7b8e7b;
+}
+
+.rightSide4{
+  background-color: #fefefe;
+  width:85%;
+  height: auto;
+  float: left;
+  display: block;
+}
+
+.rightSide4Hr{
+  float: left;
+  width:100%
+}
+
+.rightSide4Header{
+  width: 100%;
+  float: left;
+  text-align: left;
+  color: #7b8e7b;
+  padding-top: 5px;
+  font-size: 50px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  text-shadow: 2px 4px 4px #9faa9f;
+}
+
+.rightSide4Content{
+  width: 100%;
+  float: left;
+  text-align: left;
+  color: #9faa9f;
+  padding-top: 5px;
+  padding-left: 50px;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.rightSide4Hr{
+  float: left;
+  border-bottom: 1px solid  #9faa9f;
+  opacity: 0.2;
+  width:100%;
+}
+
+.rightSide4Footer{
+  width: 100%;
+  float: left;
+  text-align: left;
+  color: #b86873;
+  padding-top: 30px;
+  padding-left: 50px;
+  font-size: 30px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+
+    .bolding{
+      font-weight: bold;
+      color: black; 
+      display: block;
+    }
+
+    .home{
+      padding-top: 3px;
+      padding-bottom: 3px;
+      font-size: 20px;
+      color: #9fbba9;
+      text-align: center;
+      background-color: #6586A7;
+    }
+
+    .shownPlayers span {
+      display:none;
+      position:fixed;
+      overflow:hidden;
+    }
+
+  #playerInformation{
+    width: 200px;
+    height: 160px;
+    background-color: #cad7cf;
+    border: 1px solid grey;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #35506b;
+  }
+
+  #emptyTempDiv {
+    width:85%;
+    height: 808px;
+    float: left;
+    display: none;
+  }
+    .home a:link {
+    color: #9fbba9; 
+    background-color: transparent; 
+    text-decoration: none;
+    }
+
+    .home a:visited {
+        color: #9fbba9;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .home a:hover {
+        color: #9fbba9;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    .home a:active {
+        color: #9fbba9;
+        background-color: transparent;
+        text-decoration: none;
+    }
